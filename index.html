@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Newsletter sign-up form with success message">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Newsletter sign-up form with success message</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./main.js"></script>
+</head>
+
+<body>
+  <header></header>
+  <nav></nav>
+
+  <!-- Sign-up form start -->
+  <main>
+    <section class="form-email">
+      <div class="illustration-sign">
+        <p>Illustration-sign</p>
+      </div>
+      <div class="form">
+        <h1>Stay updated!</h1>
+        <h2>Join 60,000+ product managers receiving monthly updates on:</h2>
+        <ul>
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+        <form method="post">
+          <div class="in">
+          <div class="label">
+            <label for="emailInput" class="form-label">Email address</label>
+            <p id="Valid-email-required"></p>
+          </div>
+            <input type="email" id="emailInput" placeholder="email@company.com">
+            <button type="submit" id="submitButton">Subscribe to monthly newsletter</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+    <section class="success">
+      <div>
+        <img src="./assets/images/icon-success.svg" alt="icon-success">
+        <h2>Thanks for subscribing!</h2>
+        <p>A confirmation email has been sent to <span>ash@loremcompany.com</span>.
+          Please open it and click the button inside to confirm your subscription.</p>
+      </div>
+      <button type="button" class="btn-dismiss" onclick="dismissMessage()">Dismiss message</button>
+    </section>
+    <!-- Success message end -->
+  </main>
+  <footer></footer>
+</body>
+
+</html>

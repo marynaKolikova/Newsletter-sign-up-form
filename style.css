@@ -1,0 +1,285 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+:root {
+    --white: #ffffff;
+    --dark-blue: #242742;
+    --dark-gray: #1E1E1E;
+    --accent-red: #FF6155;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    width: 100vw;
+    height: 100vh;
+}
+
+.form-email {
+    background-color: var(--white);
+    max-width: 504px;
+    margin: 0 auto;
+}
+
+.illustration-sign {
+    width: 100%;
+    height: 284px;
+    background-image: url('./assets/images/illustration-sign-up-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.illustration-sign p {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+section.success {
+    display: none;
+}
+
+/* .form-email {
+    display: none;
+} */
+
+.form {
+    width: 100%;
+    padding: 40px 24px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 100%;
+    color: var(--dark-blue);
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--dark-blue);
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+
+li {
+    position: relative;
+    padding-left: 37px;
+    margin-bottom: 10px;
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    background-image: url('./assets/images/icon-list.svg');
+}
+
+ul {
+    margin-bottom: 40px;
+}
+
+label {
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 150%;
+    color: var(--dark-blue);
+}
+
+.label {
+    margin-bottom: 8px;
+}
+
+.in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    width: 100%;
+    max-width: 376px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#Valid-email-required {
+    color: var(--accent-red);
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 150%;
+}
+
+input {
+    width: 100%;
+    max-width: 376px;
+    display: block;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    color: var(--dark-blue);
+    padding: 16px 24px;
+    border-radius: 8px;
+    opacity: 0.5;
+    border: 1px solid rgba(36, 39, 66, 0.5);
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+input:focus {
+    opacity: 1;
+    border-color: var(--dark-blue);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    max-width: 376px;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 150%;
+    text-align: center;
+    color: var(--white);
+    background: var(--dark-blue);
+    border-radius: 8px;
+    padding: 17px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background: linear-gradient(180deg, #FF9255 0%, #FF6464 100%);
+
+
+}
+
+/* Success message */
+
+.success {
+    padding: 149px 24px 40px 24px;
+    max-width: 504px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.success img {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.success h2 {
+    text-align: start;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 100%;
+    color: var(--dark-blue);
+    margin-bottom: 24px;
+}
+
+.success p {
+    text-align: start;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    color: var(--dark-blue);
+    max-width: 450px;
+    margin-bottom: 263px;
+}
+
+.success p span {
+    font-weight: 700;
+}
+
+/* Responsive design */
+@media screen and (min-width: 33rem) {
+}
+
+@media screen and (min-width: 40rem) {
+    body {
+        background-color: var(--dark-gray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0;
+    }
+
+    .form-email {
+        max-width: 928px;
+        display: flex;
+        flex-direction: row-reverse;
+        border-radius: 36px;
+    }
+
+    .illustration-sign {
+        height: 593px;
+        background-image: url('./assets/images/illustration-sign-up-desktop.svg');
+        border-radius: 10px;
+        margin: 24px;
+        flex: 1 1 auto;
+    }
+
+    .form {
+        flex: 1 1 auto;
+
+    }
+    
+}
