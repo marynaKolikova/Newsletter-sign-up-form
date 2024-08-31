@@ -54,7 +54,8 @@ a {
 body {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    height: 800px;
+    min-height: 842px;
+    height: 100dvh;
 }
 
 section.hidden {
