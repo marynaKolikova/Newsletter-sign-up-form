@@ -18,10 +18,11 @@
 
   <!-- Sign-up form start -->
   <main>
-    <section class="form-email">
-      <div class="illustration-sign">
-        <p>Illustration-sign</p>
-      </div>
+    <section id="form-email" class="form-email">
+      <picture>
+        <source  media="(min-width: 40rem)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+        <img src="./assets/images/illustration-sign-up-mobile.svg" alt="illustration-sign-up">
+      </picture>
       <div class="form">
         <h1>Stay updated!</h1>
         <h2>Join 60,000+ product managers receiving monthly updates on:</h2>
@@ -30,13 +31,14 @@
           <li>Measuring to ensure updates are a success</li>
           <li>And much more!</li>
         </ul>
-        <form method="post">
+        <form method="get">
           <div class="in">
-          <div class="label">
-            <label for="emailInput" class="form-label">Email address</label>
-            <p id="Valid-email-required"></p>
-          </div>
-            <input type="email" id="emailInput" placeholder="email@company.com">
+            <div class="label">
+              <label for="emailInput" class="form-label">Email address</label>
+              <p id="valid-email-required" class="error-message">Valid email required</p>
+            </div>
+            <input type="email" id="emailInput" placeholder="email@company.com" aria-describedby="Valid-email-required"
+              autocomplete="email">
             <button type="submit" id="submitButton">Subscribe to monthly newsletter</button>
           </div>
         </form>
@@ -45,7 +47,7 @@
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
-    <section class="success">
+    <section id="success" class="success hidden">
       <div>
         <img src="./assets/images/icon-success.svg" alt="icon-success">
         <h2>Thanks for subscribing!</h2>

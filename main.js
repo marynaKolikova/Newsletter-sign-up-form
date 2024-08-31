@@ -1,27 +1,45 @@
- // Get the form element
- const form = document.getElementById('signupForm');
+const emailPattern = /.+@.+\..+/;
 
- // Add an event listener for the form submission
- form.addEventListener('submit', function(event) {
-   // Prevent the default form submission
-   event.preventDefault();
+var clickButton = document.getElementById('submitButton');
+var emailInput = document.getElementById('emailInput');
+var validSelector = document.querySelector('#valid-email-required');
+var emailHint = document.getElementById('valid-email-required');
+emailInput.addEventListener("input", removeError);
 
-   // Get the email input value
-   const emailInput = document.getElementById('emailInput').value;
 
-   // Validate the email (basic validation)
-   if (validateEmail(emailInput)) {
-     // Handle successful form submission (e.g., send data to a server or show a success message)
-     console.log('Form submitted successfully with email:', emailInput);
-     alert('Thank you for subscribing!');
-   } else {
-     // Handle invalid email case
-     alert('Please enter a valid email address.');
-   }
- });
+var formEmail = document.getElementById('form-email'); 
+var success = document.getElementById('success');
 
- // Basic email validation function
- function validateEmail(email) {
-   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-   return re.test(email);
- }
+
+clickButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    var emailInputValue = document.getElementById('emailInput').value;
+    myFunction(emailInputValue);
+});
+
+
+function myFunction(emailInputValue) {
+    let text;
+    if (emailInputValue.length === 0) {
+        text = "Please enter an email";
+    } else if (!emailPattern.test(emailInputValue)) {
+        text = "Valid email required";
+    } else {
+        formEmail.classList.add('hidden');
+        success.classList.remove('hidden');
+        return;
+    }
+    emailHint.innerHTML = text;
+    validSelector.style.visibility = 'visible';
+    emailInput.style.color="var(--accent-red)";
+    emailInput.style.backgroundColor="var(--light-red)";
+    emailInput.style.borderColor="var(--accent-red)";
+    
+}
+
+function removeError(){
+    emailHint.innerHTML = "";
+    emailInput.style.color= "";
+    emailInput.style.backgroundColor= "";
+    emailInput.style.borderColor= "";
+}

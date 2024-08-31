@@ -48,13 +48,17 @@ a {
     --dark-blue: #242742;
     --dark-gray: #1E1E1E;
     --accent-red: #FF6155;
+    --light-red:rgb(252, 219, 219);
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    width: 100vw;
-    height: 100vh;
+    height: 800px;
+}
+
+section.hidden {
+    display: none;
 }
 
 .form-email {
@@ -63,35 +67,13 @@ body {
     margin: 0 auto;
 }
 
-.illustration-sign {
+.form-email img {
     width: 100%;
     height: 284px;
-    background-image: url('./assets/images/illustration-sign-up-mobile.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     border-radius: 0 0 10px 10px;
+    object-fit: cover;
+    object-position: top;
 }
-
-.illustration-sign p {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-section.success {
-    display: none;
-}
-
-/* .form-email {
-    display: none;
-} */
 
 .form {
     width: 100%;
@@ -112,7 +94,10 @@ h2 {
     color: var(--dark-blue);
     font-size: 1rem;
     margin-bottom: 24px;
+    word-wrap: break-word;
+    white-space: normal;
 }
+
 
 li {
     position: relative;
@@ -157,11 +142,12 @@ label {
     justify-content: space-between;
 }
 
-#Valid-email-required {
+#valid-email-required {
     color: var(--accent-red);
     font-weight: 700;
     font-size: 0.75rem;
     line-height: 150%;
+    visibility: hidden;
 }
 
 input {
@@ -171,18 +157,19 @@ input {
     font-weight: 400;
     font-size: 1rem;
     line-height: 150%;
-    color: var(--dark-blue);
+    color: rebeccapurple;
     padding: 16px 24px;
     border-radius: 8px;
     opacity: 0.5;
     border: 1px solid rgba(36, 39, 66, 0.5);
     margin-bottom: 24px;
     cursor: pointer;
+    background-color: var(--white);
 }
+
 
 input:focus {
     opacity: 1;
-    border-color: var(--dark-blue);
     outline: none;
 }
 
@@ -203,8 +190,6 @@ button {
 
 button:hover {
     background: linear-gradient(180deg, #FF9255 0%, #FF6464 100%);
-
-
 }
 
 /* Success message */
@@ -250,8 +235,6 @@ button:hover {
 }
 
 /* Responsive design */
-@media screen and (min-width: 33rem) {
-}
 
 @media screen and (min-width: 40rem) {
     body {
@@ -259,7 +242,10 @@ button:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex: 0;
+    }
+
+    main {
+        width: 100%;
     }
 
     .form-email {
@@ -269,17 +255,41 @@ button:hover {
         border-radius: 36px;
     }
 
-    .illustration-sign {
-        height: 593px;
-        background-image: url('./assets/images/illustration-sign-up-desktop.svg');
+    picture {
+        margin: 24px 24px 24px 0;
+        flex: 1;
+    }
+
+    .form-email img {
+        min-width: 250px;
+        height: 100%;
         border-radius: 10px;
-        margin: 24px;
-        flex: 1 1 auto;
+        object-position: right;
     }
 
     .form {
-        flex: 1 1 auto;
-
+        max-width: 376px;
+        margin: 98px 64px;
+        padding: 0;
+        flex: 1;
     }
-    
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .success {
+        background-color: var(--white);
+        padding: 48px 64px 64px 64px;
+        border-radius: 36px;
+    }
+
+    .success h2 {
+        font-size: 3.5rem;
+    }
+
+    .success p {
+        margin-bottom: 40px;
+    }
+
 }
