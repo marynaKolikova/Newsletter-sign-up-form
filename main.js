@@ -9,6 +9,7 @@ emailInput.addEventListener("input", removeError);
 
 var formEmail = document.getElementById('form-email'); 
 var success = document.getElementById('success');
+var successEmail = document.getElementById('successEmail');
 
 
 clickButton.addEventListener('click', function (e) {
@@ -27,6 +28,7 @@ function myFunction(emailInputValue) {
     } else {
         formEmail.classList.add('hidden');
         success.classList.remove('hidden');
+        successEmail.innerHTML = emailInputValue;
         return;
     }
     emailHint.innerHTML = text;
@@ -34,6 +36,7 @@ function myFunction(emailInputValue) {
     emailInput.style.color="var(--accent-red)";
     emailInput.style.backgroundColor="var(--light-red)";
     emailInput.style.borderColor="var(--accent-red)";
+
     
 }
 
